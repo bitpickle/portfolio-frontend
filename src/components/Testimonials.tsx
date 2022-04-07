@@ -131,7 +131,7 @@ import {
             fontSize={48}
             fontWeight={'bold'}
             color={useColorModeValue('gray.700', 'gray.50')}>
-            You're in good company
+            You&apos;re in safe hands
           </chakra.h1>
           <chakra.h2
             margin={'auto'}
@@ -140,9 +140,9 @@ import {
             color={useColorModeValue('gray.500', 'gray.400')}>
             See why over{' '}
             <chakra.strong color={useColorModeValue('gray.700', 'gray.50')}>
-              150,000+
+              50+
             </chakra.strong>{' '}
-            influencers use EEZY to manage their social media content!
+            customers chose to hire me!
           </chakra.h2>
         </Box>
         <SimpleGrid

@@ -15,7 +15,7 @@ import {
   const Logo = (props: any) => {
     return (
     <Stack direction={'row'} align={'center'}>
-      <Image width={'46px'} src={useColorModeValue(process.env.BASE_URL+'logo500-dark.png',process.env.BASE_URL+'/logo500.png')}/>
+      <Image alt='Logo bitpickle.dev' width={'46px'} src={useColorModeValue(process.env.BASE_URL+"logo500-dark.png",process.env.BASE_URL+"/logo500.png")}/>
       <strong>bitpickle.dev</strong>
     </Stack>
     );

@@ -48,7 +48,7 @@ import {
               </Text>
             </Heading>
             <Text color={useColorModeValue('gray.700', 'gray.300')}>
-            I'm a backend developer with years of experience who believes that software development overflows utility in all areas and has changed the way we perceive the world. Programming goes beyond a job, it's a philosophy with the potential to solve all of humanity's problems, it just needs to be used in the right way, and that's what I do.
+            I&apos;m a backend developer with years of experience who believes that software development overflows utility in all areas and has changed the way we perceive the world. Programming goes beyond a job, it&apos;s a philosophy with the potential to solve all of humanity&apos;s problems, it just needs to be used in the right way, and that&apos;s what I do.
             {/*Sou um desenvolvedor backend com anos de experiência e que acredita que o desenvolvimento de software transborda utilidade em todas as áreas e mudou a forma como percebemos o mundo. Programação vai além de um emprego, é uma filosofia com um potêncial de resolver todos os problemas da humanidade, só precisa ser utilizada da maneira correta, e é isso que eu faço. */}
             </Text>
             <Stack
@@ -96,7 +96,7 @@ import {
               width={'full'}
               overflow={'hidden'}>
               <Image
-                alt={'Hero Image'}
+                alt={'Avatar of bitpickle'}
                 fit={'cover'}
                 align={'center'}
                 w={'100%'}
