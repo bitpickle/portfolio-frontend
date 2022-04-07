@@ -1,12 +1,16 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import Nav from '../components/Nav'
+import { Chakra } from '../styles/Chakra'
+import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <Chakra cookies={pageProps.cookies}>
+      <Nav></Nav>
       <Component {...pageProps} />
-    </ChakraProvider>
+      <Footer></Footer>
+    </Chakra>
   )
 }
 
