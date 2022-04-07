@@ -66,7 +66,7 @@ export default function Nav() {
           </Flex>
             
           <Flex justify={'center'} width={useBreakpointValue({base: 'full',md: ''})}>
-            <Image src={useColorModeValue('http://localhost:3000/logo500-dark.png','http://localhost:3000/logo500.png')} width={'40px'}/>
+            <Image src={useColorModeValue(process.env.BASE_URL+'/logo500-dark.png',process.env.BASE_URL+'/logo500.png')} width={'40px'}/>
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>

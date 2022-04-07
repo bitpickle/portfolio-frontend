@@ -102,7 +102,7 @@ import {
                 w={'100%'}
                 h={'100%'}
                 src={
-                  'http://localhost:3000/avatar-fade.png'
+                  process.env.BASE_URL+'/avatar-fade.png'
                 }
               />
             </Box>
