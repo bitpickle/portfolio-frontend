@@ -13,6 +13,7 @@ import {
     IconProps,
     useColorModeValue,
   } from '@chakra-ui/react';
+import { config } from '../../config';
   
   export default function Hero() {
     return (
@@ -102,7 +103,7 @@ import {
                 w={'100%'}
                 h={'100%'}
                 src={
-                  process.env.BASE_URL+'/avatar-fade.png'
+                  config.BASE_URL+'/avatar-fade.png'
                 }
               />
             </Box>

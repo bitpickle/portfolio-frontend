@@ -32,6 +32,7 @@ import {
   MoonIcon,
   SunIcon,
 } from '@chakra-ui/icons';
+import { config } from '../../config';
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
@@ -66,7 +67,7 @@ export default function Nav() {
           </Flex>
             
           <Flex justify={'center'} width={useBreakpointValue({base: 'full',md: ''})}>
-            <Image alt='bitpickle logo' src={useColorModeValue(process.env.BASE_URL+'/logo500-dark.png',process.env.BASE_URL+'/logo500.png')} width={'40px'}/>
+            <Image alt='bitpickle logo' src={useColorModeValue(config.BASE_URL+'/logo500-dark.png',config.BASE_URL+'/logo500.png')} width={'40px'}/>
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>

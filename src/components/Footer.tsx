@@ -11,11 +11,12 @@ import {
   } from '@chakra-ui/react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { ReactNode } from 'react';
+import { config } from '../../config';
   
   const Logo = (props: any) => {
     return (
     <Stack direction={'row'} align={'center'}>
-      <Image alt='Logo bitpickle.dev' width={'46px'} src={useColorModeValue(process.env.BASE_URL+"logo500-dark.png",process.env.BASE_URL+"/logo500.png")}/>
+      <Image alt='Logo bitpickle.dev' width={'46px'} src={useColorModeValue(config.BASE_URL+"logo500-dark.png",config.BASE_URL+"logo500.png")}/>
       <strong>bitpickle.dev</strong>
     </Stack>
     );
