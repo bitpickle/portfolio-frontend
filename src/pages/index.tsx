@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
-import Hero from '../components/Hero'
-import Statistics from '../components/Statistics'
-import Testimonials from '../components/Testimonials'
+import Hero from '../components/organisms/Hero'
+import MyTweets from '../components/organisms/MyTweets'
+import Statistics from '../components/organisms/Statistics'
 
 const Home: NextPage = () => {
   return (
     <>
     <Hero></Hero>
     <Statistics></Statistics>
-    <Testimonials></Testimonials>
+    <MyTweets></MyTweets>
     </>
   )
 }

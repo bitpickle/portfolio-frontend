@@ -24,6 +24,7 @@ import {
   MenuItem,
   Image,
 } from '@chakra-ui/react';
+
 import {
   HamburgerIcon,
   CloseIcon,
@@ -32,7 +33,45 @@ import {
   MoonIcon,
   SunIcon,
 } from '@chakra-ui/icons';
+
 import getConfig from "next/config";
+
+interface NavItem {
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
+}
+
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Home',
+    href: '#',
+  },
+  {
+    label: 'WhoAmI',
+    href: '#',
+  },
+  {
+    label: 'Projects',
+    children: [
+      {
+        label: 'Backend',
+        subLabel: 'Trending Design to inspire you',
+        href: '#',
+      },
+      {
+        label: 'Frontend',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+    ],
+  },
+  {
+    label: 'Insights',
+    href: '#',
+  },
+];
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
@@ -51,7 +90,8 @@ export default function Nav() {
           borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
-          align={'center'}>
+          align={'center'}
+          shadow={'xl'}>
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
@@ -65,9 +105,9 @@ export default function Nav() {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-            
-          <Flex justify={'center'} width={useBreakpointValue({base: 'full',md: ''})}>
-            <Image alt='bitpickle logo' src={useColorModeValue(getConfig().publicRuntimeConfig.BASE_URL+'/logo500-dark.png',getConfig().publicRuntimeConfig.BASE_URL+'/logo500.png')} width={'40px'}/>
+
+          <Flex justify={'center'} width={useBreakpointValue({ base: 'full', md: '' })}>
+            <Image alt='bitpickle logo' src={useColorModeValue(getConfig().publicRuntimeConfig.BASE_URL + '/logo500-dark.png', getConfig().publicRuntimeConfig.BASE_URL + '/logo500.png')} width={'40px'} />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -80,7 +120,7 @@ export default function Nav() {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button 
+            <Button
               onClick={toggleColorMode}>
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
@@ -111,7 +151,6 @@ export default function Nav() {
                 <br />
                 <MenuDivider />
                 <MenuItem>Your Servers</MenuItem>
-                <MenuItem>Account Settings</MenuItem>
                 <MenuItem>Logout</MenuItem>
               </MenuList>
             </Menu>
@@ -269,40 +308,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Home',
-    href: '#',
-  },
-  {
-    label: 'WhoAmI',
-    href: '#',
-  },
-  {
-    label: 'Projects',
-    children: [
-      {
-        label: 'Backend',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'Frontend',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Insights',
-    href: '#',
-  },
-];
