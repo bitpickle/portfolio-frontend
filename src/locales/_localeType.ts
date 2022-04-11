@@ -1,4 +1,6 @@
 export type LocaleType = {
+    english: string,
+    portuguese: string,
     //Navigation
     home: string,
     whoami: string,

@@ -1,6 +1,8 @@
 import { LocaleType } from "./_localeType";
 
 const ptBr: LocaleType =  {
+    english: "Inglês",
+    portuguese: "Português",
     //Navigation
     home: "Início",
     whoami: "Sobre mim",

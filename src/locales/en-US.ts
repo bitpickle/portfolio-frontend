@@ -1,6 +1,8 @@
 import { LocaleType } from "./_localeType";
 
 const enUs: LocaleType = {
+    english: "English",
+    portuguese: "Portuguese",
     //Navigation
     home: "Home",
     whoami: "WhoAmI",

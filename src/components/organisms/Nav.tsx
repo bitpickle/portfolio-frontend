@@ -36,6 +36,7 @@ import {
 
 import getConfig from "next/config";
 import useLanguage from '../../hooks/useLanguage';
+import ChangeLang from '../molecules/ChangeLang';
 
 interface NavItem {
   label: string;
@@ -44,7 +45,7 @@ interface NavItem {
   href?: string;
 }
 
-function NavItems(){
+function NavItems() {
   const lang = useLanguage();
 
   const NAV_ITEMS: Array<NavItem> = [
@@ -144,6 +145,9 @@ export default function Nav() {
                 />
               </MenuButton>
               <MenuList alignItems={'center'}>
+                <Center mx={5}>
+                  <ChangeLang />
+                </Center>
                 <br />
                 <Center>
                   <Avatar

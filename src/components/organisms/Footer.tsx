@@ -28,6 +28,7 @@ export default function Footer() {
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
+        textAlign={'center'}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
         <Logo />
