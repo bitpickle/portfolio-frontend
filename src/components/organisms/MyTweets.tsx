@@ -1,4 +1,5 @@
 import { Container, useColorModeValue, chakra, Box, Center } from "@chakra-ui/react";
+import useLanguage from "../../hooks/useLanguage";
 import ChakraCarousel from "../molecules/ChakraCarousel";
 import TweetCard from "../molecules/TweetCard";
 
@@ -54,6 +55,7 @@ const testimonials = [
 ];
 
 export default function MyTweets() {
+    const lang = useLanguage();
     return (
         <>
             <Center
@@ -67,14 +69,14 @@ export default function MyTweets() {
                         fontSize={20}
                         textTransform={'uppercase'}
                         color={'brand.secondary.2'}>
-                        Keep your eyes on me
+                        {lang.tweetsTopTitle}
                     </chakra.h3>
                     <chakra.h1
                         py={5}
                         fontSize={48}
                         fontWeight={'bold'}
                         color={useColorModeValue('gray.700', 'gray.50')}>
-                        See my last tweets
+                        {lang.tweetsTitle}
                     </chakra.h1>
                 </Box>
             </Center>

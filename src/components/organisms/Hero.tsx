@@ -6,10 +6,12 @@ import {
   Button,
   useColorModeValue,
 } from '@chakra-ui/react';
+import useLanguage from '../../hooks/useLanguage';
 import ReadyPlayer from '../molecules/ReadyPlayer';
 
 
 export default function Hero() {
+  const lang = useLanguage();
   return (
     <Container maxW={'7xl'} paddingTop={20}>
       <Stack
@@ -35,16 +37,15 @@ export default function Hero() {
                 bg: 'brand.primary.3',
                 zIndex: -1,
               }}>
-              Hi,
+              {lang.greetings}
             </Text>
             <br />
             <Text as={'span'} color={'brand.primary.3'}>
-              my name is <strong>Péricles</strong>
+              {lang.iAm}
             </Text>
           </Heading>
           <Text color={useColorModeValue('gray.700', 'gray.300')}>
-            I&apos;m a backend developer with years of experience who believes that software development overflows utility in all areas and has changed the way we perceive the world. Programming goes beyond a job, it&apos;s a philosophy with the potential to solve all of humanity&apos;s problems, it just needs to be used in the right way, and that&apos;s what I do.
-            {/*Sou um desenvolvedor backend com anos de experiência e que acredita que o desenvolvimento de software transborda utilidade em todas as áreas e mudou a forma como percebemos o mundo. Programação vai além de um emprego, é uma filosofia com um potêncial de resolver todos os problemas da humanidade, só precisa ser utilizada da maneira correta, e é isso que eu faço. */}
+            {lang.aboutMe}
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -57,7 +58,7 @@ export default function Hero() {
               colorScheme={'red'}
               bg={'brand.primary.3'}
               _hover={{ bg: 'brand.primary.5' }}>
-              Hire me
+              {lang.hireMe}
             </Button>
             <Button
               rounded={'full'}
@@ -65,7 +66,7 @@ export default function Hero() {
               fontWeight={'normal'}
               px={6}
             >
-              See my Projects
+              {lang.seeProjects}
             </Button>
           </Stack>
         </Stack>

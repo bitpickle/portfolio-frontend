@@ -6,10 +6,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import useLanguage from '../../hooks/useLanguage';
 import Logo from '../atoms/Logo';
 import SocialButton from '../atoms/SocialButton';
 
 export default function Footer() {
+  const lang = useLanguage();
   return (
     <Box
       bg={useColorModeValue('gray.200', 'gray.900')}
@@ -29,7 +31,7 @@ export default function Footer() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
         <Logo />
-        <Text>© 2022 Péricles Pires. All rights reserved</Text>
+        <Text>{lang.copyright}</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
             <FaTwitter />

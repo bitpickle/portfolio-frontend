@@ -35,6 +35,7 @@ import {
 } from '@chakra-ui/icons';
 
 import getConfig from "next/config";
+import useLanguage from '../../hooks/useLanguage';
 
 interface NavItem {
   label: string;
@@ -43,35 +44,41 @@ interface NavItem {
   href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Home',
-    href: '#',
-  },
-  {
-    label: 'WhoAmI',
-    href: '#',
-  },
-  {
-    label: 'Projects',
-    children: [
-      {
-        label: 'Backend',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'Frontend',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Insights',
-    href: '#',
-  },
-];
+function navItems(){
+  const lang = useLanguage();
+
+  const NAV_ITEMS: Array<NavItem> = [
+    {
+      label: lang.home,
+      href: '#',
+    },
+    {
+      label: lang.whoami,
+      href: '#',
+    },
+    {
+      label: lang.projects,
+      children: [
+        {
+          label: 'Backend',
+          subLabel: 'Trending Design to inspire you',
+          href: '#',
+        },
+        {
+          label: 'Frontend',
+          subLabel: 'Up-and-coming Designers',
+          href: '#',
+        },
+      ],
+    },
+    {
+      label: lang.insights,
+      href: '#',
+    },
+  ];
+
+  return NAV_ITEMS;
+}
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
@@ -172,7 +179,7 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4} align={'center'}>
-      {NAV_ITEMS.map((navItem) => (
+      {navItems().map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -252,7 +259,7 @@ const MobileNav = () => {
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
+      {navItems().map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
