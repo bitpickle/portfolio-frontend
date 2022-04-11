@@ -44,7 +44,7 @@ interface NavItem {
   href?: string;
 }
 
-function navItems(){
+function NavItems(){
   const lang = useLanguage();
 
   const NAV_ITEMS: Array<NavItem> = [
@@ -179,7 +179,7 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4} align={'center'}>
-      {navItems().map((navItem) => (
+      {NavItems().map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -259,7 +259,7 @@ const MobileNav = () => {
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
-      {navItems().map((navItem) => (
+      {NavItems().map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
